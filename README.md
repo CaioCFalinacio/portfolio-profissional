@@ -7,10 +7,13 @@ Este projeto consiste na criação de um website de portfólio profissional resp
 - Pedro Henrique Nogueira Ferreira
 
 ## Tecnologias previstas:
-### Linguagens de desenvolvimento:
-- HTML
-- CSS
+### Front-end:
+- HTML5
+- CSS3
 - JavaScript
 
-### Deploy:
+### Hospedagem:
 - Vercel
+
+### Prototipagem:
+- Figma
