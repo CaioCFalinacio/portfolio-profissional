@@ -17,3 +17,16 @@ Este projeto consiste na criação de um website de portfólio profissional resp
 
 ### Prototipagem:
 - Figma
+
+## Estrutura inicial de diretórios
+
+```text
+portfolio-projeto/
+├── assets/
+│   │   └── style.css
+│   │   └── main.js
+│   └── images/
+│       ├── profile.png
+│       └── projects/
+├── index.html
+└── README.md
