@@ -58,11 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       githubPersonalLabel: "GitHub Pessoal",
       githubAcademicLabel: "GitHub Acadêmico",
 
-      // Botão e Modal de Acesso
-      btnRequestAccess: "Solicitar Acesso Especial",
-      modalTitle: "Solicitar Acesso Especial",
-      modalSub: "Preencha os dados abaixo e entraremos em contato para liberar seu acesso personalizado.",
-
       // Rodapé
       footerText:
         "© 2026 Caio César Falinacio dos Santos. Todos os direitos reservados. | Lab01S01 - PUC Minas",
@@ -116,18 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
       githubPersonalLabel: "Personal GitHub",
       githubAcademicLabel: "Academic GitHub",
 
-      // Access Button & Modal
-      btnRequestAccess: "Request Special Access",
-      modalTitle: "Request Special Access",
-      modalSub: "Fill in your details below and we'll get back to you with a personalized access link.",
-
       // Footer
       footerText:
         "© 2026 Caio César Falinacio dos Santos. All rights reserved. | Lab01S01 - PUC Minas",
     },
   };
 
-  // 3. Função auxiliar e de Alternância de Idioma
+  // 3. Expõe dicionário e idioma ativo para o sistema de perfis
+  let currentLang = "pt";
+  window.__portfolioDictionary = dictionary;
+  window.__portfolioGetLang    = () => currentLang;
+
+  // 4. Função auxiliar e de Alternância de Idioma
   const btnPt = document.getElementById("lang-pt");
   const btnEn = document.getElementById("lang-en");
 
@@ -136,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function changeLanguage(lang) {
+    currentLang = lang;
     const t = dictionary[lang];
     if (!t) return;
 
@@ -191,12 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (get("whatsapp-label")) get("whatsapp-label").textContent = t.whatsappLabel;
     if (get("github-personal-label")) get("github-personal-label").textContent = t.githubPersonalLabel;
     if (get("github-academic-label")) get("github-academic-label").textContent = t.githubAcademicLabel;
-
-    // --- Botão e Modal de Acesso ---
-    if (get("btn-request-text")) get("btn-request-text").textContent = t.btnRequestAccess;
-    if (get("modal-title")) get("modal-title").textContent = t.modalTitle;
-    const modalSubEl = document.querySelector(".modal-header p");
-    if (modalSubEl) modalSubEl.textContent = t.modalSub;
 
     // --- Rodapé ---
     if (get("footer-text")) get("footer-text").textContent = t.footerText;
